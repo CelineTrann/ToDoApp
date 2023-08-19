@@ -1,4 +1,4 @@
-export function ToDoItem({ id, title, completed, toggleToDo }) {
+export function ToDoItem({ id, completed, title, toggleToDo, deleteToDo }) {
   return (
     <li>
       <label>
@@ -8,8 +8,8 @@ export function ToDoItem({ id, title, completed, toggleToDo }) {
           onChange={e => toggleToDo(id, e.target.checked)}
         />
         {title}
-        <button>Delete</button>
       </label>
+      <button onClick={() => deleteToDo(id)}>Delete</button>
     </li>
   );
 }

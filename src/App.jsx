@@ -10,9 +10,9 @@ export default function App() {
     setToDos(currentToDos => {
       return [
         ...currentToDos, 
-        { id: crypto.randomUUID, title, completed: false }
-      ];
-    });
+        { id: crypto.randomUUID(), title, completed: false }
+      ]
+    })
   }
 
   function toggleToDo(id, completed) {
@@ -21,8 +21,14 @@ export default function App() {
         if (todo.id === id) {
           return {...todo, completed}
         } 
-        return todo;
+        return todo
       })
+    })
+  }
+
+  function deleteToDo(id) {
+    setToDos(currentTodos => {
+      return currentTodos.filter(todo => todo.id !== id)
     })
   }
 
@@ -30,7 +36,7 @@ export default function App() {
     <>
       <NewToDoForm addItem={addItem} />
       <h1>To Do List:</h1>
-      <ToDoList todos={todos} toggleToDo={toggleToDo}/>
+      <ToDoList todos={todos} toggleToDo={toggleToDo} deleteToDo={deleteToDo}/>
     </>
   )
 }
