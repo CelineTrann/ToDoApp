@@ -35,7 +35,7 @@ export default function App() {
   return (
     <>
       <NewToDoForm addItem={addItem} />
-      <h1>To Do List:</h1>
+      <h1 className="header">To Do List:</h1>
       <ToDoList todos={todos} toggleToDo={toggleToDo} deleteToDo={deleteToDo}/>
     </>
   )

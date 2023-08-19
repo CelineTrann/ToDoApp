@@ -2,7 +2,7 @@ import { ToDoItem } from "./ToDoItem";
 
 export function ToDoList({ todos, toggleToDo, deleteToDo }) {
   return (
-    <ul>
+    <ul className="list">
       {todos.length === 0 && "No To Dos"}
       {todos.map(todo => {
         return (
