@@ -1,4 +1,43 @@
 :root {
+    --button-color:  hsl(200, 100%, 50%);
+    --button-background: hsl(200, 100%, 50%, 0.1);
+    --button-backgroun-focus: hsl(200, 100%, 50%, 0.2);
+}
+
+*,
+::before,
+::after {
     box-sizing: border-box;
     margin: 0;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 1rem;
+}
+
+.new-item-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    background: var(--button-background);
+    border: 1px solid var(--button-color);
+    color: var(--button-color);
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn:hover,
+.btn:focus-visible {
+    background: var(--button-backgroun-focus);
 }
