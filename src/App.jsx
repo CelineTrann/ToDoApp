@@ -1,12 +1,26 @@
-import { useState } from 'react'
+import { useState } from "react";
+import { NewToDoForm } from "./NewToDoForm";
+import { ToDoList } from "./ToDoList";
+import "./styles.css"
 
-function App() {
+export default function App() {
+  const [todos, setToDos] = useState([]);
+
+  function addItem(title) {
+    setToDos(currentToDos => {z
+      return [
+        ...currentToDos, 
+        { id: crypto.randomUUID, title: item, completed: false }
+      ];
+    });
+  }
 
   return (
     <>
-      Hi!
+      <NewToDoForm addItem={addItem} />
+      <h1>To Do List:</h1>
+      <ToDoList />
     </>
   )
 }
 
-export default App
