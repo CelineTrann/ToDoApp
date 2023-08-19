@@ -15,11 +15,22 @@ export default function App() {
     });
   }
 
+  function toggleToDo(id, completed) {
+    setToDos(currentToDos => {
+      return currentToDos.map(todo => {
+        if (todo.id === id) {
+          return {...todo, completed}
+        } 
+        return todo;
+      })
+    })
+  }
+
   return (
     <>
       <NewToDoForm addItem={addItem} />
       <h1>To Do List:</h1>
-      <ToDoList todos={todos} />
+      <ToDoList todos={todos} toggleToDo={toggleToDo}/>
     </>
   )
 }

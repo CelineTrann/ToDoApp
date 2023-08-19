@@ -1,6 +1,6 @@
 import { ToDoItem } from "./ToDoItem";
 
-export function ToDoList({ todos }) {
+export function ToDoList({ todos, toggleToDo }) {
   return (
     <ul>
       {todos.length === 0 && "No To Dos"}
@@ -9,6 +9,7 @@ export function ToDoList({ todos }) {
           <ToDoItem 
             {...todo}
             key={todo.id}
+            toggleToDo={toggleToDo}
           />
         )
       })}
